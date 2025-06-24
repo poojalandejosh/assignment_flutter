@@ -1,19 +1,16 @@
+import 'package:assignment_flutter/constants.dart';
 import 'package:flutter/material.dart';
 
-class Profile extends StatefulWidget {
+class Profile extends StatelessWidget {
   const Profile({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
-}
-
-class _ProfileState extends State<Profile> {
-  @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Profile Page',
+          profilePageTitle,
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
@@ -37,28 +34,28 @@ class _ProfileState extends State<Profile> {
       body: Center(
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.02),
             ClipOval(
               child: Image.asset(
-                'assets/images/profile.jpg',
+                "assets/images/profile.jpg",
                 width: 100,
                 height: 100,
                 fit: BoxFit.cover, // ensures the image fills the circle
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.02),
             Text(
-              "Pooja Lande",
+              name,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.02),
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10),
               child: Container(
                 color: Color.fromARGB(255, 220, 245, 245),
-                 padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Text(
-                  "Experienced and passionate front-end and cross-platform mobile developer with over 4.5+ years of expertise in building scalable, high-performance applications using React Native, React.js, and Flutter. Proven ability to design, develop, and deliver elegant UI/UX-driven mobile apps and responsive web interfaces across iOS, Android, and web platforms Skilled in integrating RESTful APIs, handling state management (Redux, Provider, Bloc), optimizing performance, writing reusable components, and ensuring pixel-perfect UI across devices.",
+                  profileDescription,
                   style: TextStyle(
                     fontSize: 16,
                     backgroundColor: const Color.fromARGB(255, 220, 245, 245),
@@ -67,17 +64,17 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
             ),
-             const SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.02),
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 235, 237, 238),
                 ),
                 onPressed: () {
-                  print("Login Clicked");
+                  //pressed handler
                 },
                 child: const Text(
-                  "Follow",
+                  btnText,
                   style: TextStyle(color: Color.fromARGB(255, 26, 25, 25)),
                 ),
               ),
