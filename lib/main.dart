@@ -1,3 +1,4 @@
+import 'package:assignment_flutter/screens/todo_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,19 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
      debugShowCheckedModeBanner: false,
-      home: Main()
+      home: TodoApp()
       
     );
   }
 }
-class Main extends StatelessWidget {
-  const Main({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text("Hello"),
-    );
-  }
-}
-
