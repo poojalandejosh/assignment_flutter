@@ -1,3 +1,4 @@
+import 'package:assignment_flutter/assignments/assignment_three/login_screen.dart';
 import 'package:assignment_flutter/assignments/assignment_two/profile_screen.dart';
 import 'package:assignment_flutter/assignments/assignment_two/home_screen.dart';
 import 'package:assignment_flutter/assignments/assignment_two/user_modal.dart';
@@ -15,7 +16,7 @@ class AppNavigation extends State<NavScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/login',
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/':
@@ -23,6 +24,8 @@ class AppNavigation extends State<NavScreen> {
           case '/profile':
             final user = settings.arguments as User;
             return MaterialPageRoute(builder: (_) => Profile(user: user));
+          case '/login':
+            return MaterialPageRoute(builder: (_) => const LoginPage());
           default:
             return MaterialPageRoute(builder: (_) => const Home());
         }
