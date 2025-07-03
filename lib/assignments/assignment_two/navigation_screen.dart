@@ -1,5 +1,6 @@
 import 'package:assignment_flutter/assignments/assignment_two/profile_screen.dart';
 import 'package:assignment_flutter/assignments/assignment_two/home_screen.dart';
+import 'package:assignment_flutter/assignments/assignment_two/user_modal.dart';
 import 'package:flutter/material.dart';
 
 class NavScreen extends StatefulWidget {
